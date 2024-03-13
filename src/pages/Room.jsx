@@ -6,6 +6,8 @@ import { useEffect, useState } from "react";
 import useCrud from "../hooks/useCruds";
 import { Box, Grid, Typography, Button } from "@mui/material";
 import homeStyles from "../css/homeStyles.module.css";
+import Alert from '@mui/material/Alert';
+
 
 const Room = () => {
   const { id } = useParams();
@@ -17,6 +19,7 @@ const Room = () => {
       console.log("song", data.song_name);
       return (
         <div>
+          <Alert severity="error">As per Spotify's latest API changes, music controllers are no longer granted access for non-premium accounts.</Alert>
           <Grid container spacing={2} direction="column" alignItems="center">
             <Grid item xs={12} sm={6} md={4}>
               <Typography variant="h4" className={homeStyles.mainText}>
